@@ -7,26 +7,26 @@ import { BlurInHeading } from "@/components/blur-in-heading";
 const milestones = [
   {
     year: "2019",
-    title: "Strat launch",
-    description: "In December 2020, Alex Carter, Jamie Lin, and Mia Chen joined forces to establish Strat with a clear mission: to make cutting-edge design accessible and affordable for all tech innovators. The studio specializes in AI, SaaS, and tech solutions, addressing complex challenges with creative design.",
+    title: "ViBound Studio launch",
+    description: "In December 2020, Alex Carter, Jamie Lin, and Mia Chen joined forces to establish ViBound Studio with a clear mission: to make cutting-edge design accessible and affordable for all tech innovators. The studio specializes in AI, SaaS, and tech solutions, addressing complex challenges with creative design.",
     isFirst: true,
   },
   {
     year: "2015",
-    title: "Strat's debut",
-    description: "Building on the success of Strat's debut, the studio expanded in 2021, focusing on enhancing user experiences in tech, offering services like UX/UI design, branding, and product development.",
+    title: "ViBound Studio's debut",
+    description: "Building on the success of ViBound Studio's debut, the studio expanded in 2021, focusing on enhancing user experiences in tech, offering services like UX/UI design, branding, and product development.",
     isFirst: false,
   },
   {
     year: "3",
     title: "Global expansion",
-    description: "Strat broadened its reach to international markets, launching services in Europe and Asia. The studio also opened a new design hub in Berlin, making its innovative solutions available to a wider audience.",
+    description: "ViBound Studio broadened its reach to international markets, launching services in Europe and Asia. The studio also opened a new design hub in Berlin, making its innovative solutions available to a wider audience.",
     isFirst: false,
   },
   {
     year: "4",
-    title: "Strat goes public",
-    description: "Strat went public through a SPAC on NASDAQ: STRT. The studio acquired the design firm PixelCraft and the tech platform InnovateX, significantly enhancing its global presence.",
+    title: "ViBound Studio goes public",
+    description: "ViBound Studio went public through a SPAC on NASDAQ: STRT. The studio acquired the design firm PixelCraft and the tech platform InnovateX, significantly enhancing its global presence.",
     isFirst: false,
   },
 ];
@@ -39,14 +39,14 @@ interface MilestoneCardProps {
 
 const MilestoneCard = ({ milestone, index, isLast }: MilestoneCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: cardRef,
     offset: ["start end", "end center"]
   });
 
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  
+
   const isFirstStep = index === 0;
   const numberBgProgress = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
 
@@ -62,46 +62,46 @@ const MilestoneCard = ({ milestone, index, isLast }: MilestoneCardProps) => {
       {/* Left - Year Badge & Line */}
       <div className="flex flex-col items-center">
         {/* Year Badge */}
-        <motion.div 
+        <motion.div
           className="w-12 h-12 p-2 rounded-lg inline-flex flex-col justify-center items-center relative overflow-hidden"
-          style={{ 
-            background: isFirstStep 
-              ? "linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 100%)" 
+          style={{
+            background: isFirstStep
+              ? "linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 100%)"
               : "rgba(255,255,255,0.3)"
           }}
         >
           {/* Fill overlay for non-first steps */}
           {!isFirstStep && (
-            <motion.div 
+            <motion.div
               className="absolute inset-0 rounded-lg"
-              style={{ 
+              style={{
                 background: "linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 100%)",
                 opacity: numberBgProgress
               }}
             />
           )}
-          <motion.span 
+          <motion.span
             className="text-base font-normal leading-7 relative z-10"
-            style={{ 
+            style={{
               color: isFirstStep ? "#000000" : useTransform(numberBgProgress, [0, 1], ["#FFFFFF", "#000000"])
             }}
           >
             {milestone.year}
           </motion.span>
         </motion.div>
-        
+
         {/* Vertical Line with scroll fill */}
         {!isLast && (
           <div className="relative w-[1px] h-48 lg:h-64 mt-4">
             {/* Background line */}
             <div className="absolute inset-0 bg-foreground/30" />
             {/* Fill line */}
-            <motion.div 
+            <motion.div
               className="absolute top-0 left-0 w-full bg-emerald-100"
               style={{ height: lineHeight }}
             />
             {/* Fade effect at bottom of fill */}
-            <motion.div 
+            <motion.div
               className="absolute left-0 w-full h-8 bg-gradient-to-b from-emerald-100 to-transparent"
               style={{ top: lineHeight }}
             />
@@ -147,9 +147,9 @@ export const AboutTimelineSection = () => {
           {/* Right - Timeline */}
           <div className="flex flex-col">
             {milestones.map((milestone, index) => (
-              <MilestoneCard 
-                key={milestone.title} 
-                milestone={milestone} 
+              <MilestoneCard
+                key={milestone.title}
+                milestone={milestone}
                 index={index}
                 isLast={index === milestones.length - 1}
               />

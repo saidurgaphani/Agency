@@ -34,7 +34,7 @@ export const CTASection = () => {
           {/* CTA Button */}
           <Link to="/schedule">
             <Button variant="glass" size="lg" className="h-14 px-8 py-4 rounded-2xl text-lg">
-              Schedule a 1:1 Meeting
+              Schedule a Meeting
               <ArrowRight className="w-6 h-6" />
             </Button>
           </Link>

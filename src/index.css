@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -103,8 +104,27 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  html {
-    scroll-behavior: smooth;
+  /* scroll-behavior: smooth; - Disabled for Lenis */
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
   }
 
   body {
@@ -116,5 +136,11 @@ All colors MUST be HSL.
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .font-script {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    /* Great Vibes is regular weight usually */
   }
 }

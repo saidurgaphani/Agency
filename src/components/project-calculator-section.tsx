@@ -75,7 +75,7 @@ const ProjectCalculatorSection = () => {
 
   const handleSubmitQuote = async () => {
     setIsSubmitting(true);
-    
+
     const formData = {
       serviceType,
       pages,
@@ -264,10 +264,10 @@ const ProjectCalculatorSection = () => {
                 </p>
               </div>
 
-              {/* Strat Studio Cost */}
+              {/* ViBound Studio Cost */}
               <div className="rounded-2xl p-6 space-y-3 border border-border relative overflow-hidden bg-gradient-card">
                 <img src={pricingCardBg} alt="" className="absolute top-0 right-0 w-auto h-full object-cover pointer-events-none" />
-                <h4 className="text-foreground text-lg font-normal relative z-10">With Strat Studio</h4>
+                <h4 className="text-foreground text-lg font-normal relative z-10">With ViBound Studio</h4>
                 <div className="text-foreground text-5xl font-bold">${calculatePrice().toLocaleString()}</div>
                 <p className="text-muted-foreground">Save your money, time & headache</p>
               </div>

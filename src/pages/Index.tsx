@@ -15,23 +15,26 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Fixed Header Light Effect - below navbar */}
-      <div className="fixed top-0 left-0 w-full z-10 pointer-events-none overflow-hidden" style={{ transform: 'translateY(-5%)' }}>
-        <img 
-          src={headerLight} 
-          alt="" 
+      {/* <div className="fixed top-0 left-0 w-full z-10 pointer-events-none overflow-hidden" style={{ transform: 'translateY(-5%)' }}>
+        <img
+          src={headerLight}
+          alt=""
           className="w-full object-cover opacity-70 mix-blend-lighten"
           style={{ transform: 'scale(1.05)' }}
         />
-      </div>
+      </div> */}
       <Navbar />
       <main>
         <HeroSection />
+
+
+
         <TestimonialSection />
         <PortfolioSection />
-        <BenefitsSection />
-        <TrustedBySection />
+        {/* <BenefitsSection /> */}
+        {/* <TrustedBySection /> */}
         <HowItWorksSection />
-        <ProjectCalculatorSection />
+        {/* <ProjectCalculatorSection /> */}
         <CTASection />
       </main>
       <Footer />

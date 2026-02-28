@@ -95,11 +95,11 @@ export const ServicesProductDesignSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <img
+          {/* <img
             src={productDesignImage}
             alt="Product design interface showcasing design tools and workflow"
             className="w-full h-auto rounded-2xl grayscale"
-          />
+          /> */}
           {/* Bottom Fade Effect */}
           <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none" />
         </motion.div>

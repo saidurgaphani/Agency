@@ -3,14 +3,16 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/ViBound.svg";
 
 const navLinks = [
+  { label: "Home", href: "/" },
   { label: "About us", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Pricing", href: "/#pricing" },
+  { label: "Digital Marketing", href: "/digital-marketing" },
+  // { label: "Pricing", href: "/#pricing" },
   { label: "Contact", href: "/contact" },
-  { label: "Log in", href: "/login" },
+  // { label: "Log in", href: "/login" },
 ];
 
 export function Navbar() {
@@ -24,11 +26,12 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[hsl(var(--nav-bg))] border-b border-[hsl(var(--nav-border))] backdrop-blur-sm">
-      <nav className="container mx-auto flex h-20 items-center justify-between px-6 lg:px-24">
+    <header className="fixed top-0 z-50 w-full bg-[hsl(var(--nav-bg))] border-b border-[hsl(var(--nav-border))] backdrop-blur-sm">
+      <nav className="container mx-auto flex h-16 items-center justify-between px-6 lg:px-24">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Strat Studio Logo" className="h-6 w-auto" />
+          <img src={logo} alt="ViBound Studio Logo" className="h-12 w-auto" />
+          {/* <span className="text-xl md:text-2xl font-bold">___ Studio</span> */}
         </Link>
 
         {/* Desktop Navigation */}
@@ -55,13 +58,13 @@ export function Navbar() {
         </ul>
 
         {/* CTA Button - Desktop */}
-        <div className="hidden lg:block">
+        {/* <div className="hidden lg:block">
           <Link to="/contact">
             <Button variant="glass" size="default" className="px-6">
               Buy Template
             </Button>
           </Link>
-        </div>
+        </div> */}
 
         {/* Mobile Menu Toggle */}
         <button
@@ -82,7 +85,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="lg:hidden absolute top-20 left-0 right-0 z-50 bg-background border-b border-[hsl(var(--nav-border))]"
+            className="lg:hidden absolute top-0 left-0 right-0 z-50 bg-background border-b border-[hsl(var(--nav-border))] mt-16"
           >
             <ul className="flex flex-col items-center gap-6 py-8">
               {navLinks.map((link, index) => (
@@ -117,11 +120,11 @@ export function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.15, delay: navLinks.length * 0.05 }}
               >
-                <Link to="/contact" onClick={handleMenuClose}>
+                {/* <Link to="/contact" onClick={handleMenuClose}>
                   <Button variant="glass" size="default" className="px-6">
                     Buy Template
                   </Button>
-                </Link>
+                </Link> */}
               </motion.li>
             </ul>
           </motion.div>

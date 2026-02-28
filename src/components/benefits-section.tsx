@@ -55,6 +55,13 @@ const benefits = [
     description: "We move at lightning speed. We provide drafts, usually within 48 hours.",
     background: card6Bg,
   },
+  {
+    id: 7,
+    icon: Clock,
+    title: "48-Hour Updates",
+    description: "We move at lightning speed. We provide drafts, usually within 48 hours.",
+    background: card6Bg,
+  },
 ];
 
 interface BenefitCardProps {

@@ -2,6 +2,8 @@ import { Twitter, Linkedin, Instagram, Facebook } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import headerLight from "@/assets/header-light.png";
+import { GlowBadge } from "./glow-badge";
+import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 
 const footerLinks = {
   company: {
@@ -9,16 +11,17 @@ const footerLinks = {
     links: [
       { label: "About Us", href: "/about" },
       { label: "Services", href: "/services" },
+      { label: "Digital Marketing", href: "/digital-marketing" },
       { label: "Contact", href: "/contact" },
     ],
   },
-  legal: {
-    title: "Legal",
-    links: [
-      { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "Password Protected", href: "/password-protected" },
-    ],
-  },
+  // legal: {
+  //   title: "Legal",
+  //   links: [
+  //     { label: "Privacy Policy", href: "/privacy-policy" },
+  //     { label: "Password Protected", href: "/password-protected" },
+  //   ],
+  // },
 };
 
 const socialLinks = [
@@ -33,17 +36,17 @@ export const Footer = () => {
     <footer className="relative z-20 pt-24 pb-12 px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Top border with fade effect */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-foreground/[0.12] via-foreground to-foreground/[0.12]" />
-      
+
       {/* Bottom Light Effect - Flipped vertically */}
       <div className="absolute bottom-0 left-0 w-full z-0 pointer-events-none overflow-hidden" style={{ transform: 'translateY(10%)' }}>
-        <img 
-          src={headerLight} 
-          alt="" 
+        <img
+          src={headerLight}
+          alt=""
           className="w-full object-cover opacity-50 mix-blend-lighten"
           style={{ transform: 'scaleY(-1) scale(1.05)' }}
         />
       </div>
-      
+
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Main Footer Content */}
         <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-20">
@@ -52,7 +55,7 @@ export const Footer = () => {
             <div className="flex flex-col gap-6">
               {/* Logo */}
               <Link to="/" className="flex items-center gap-3">
-                <img src={logo} alt="Strat Studio Logo" className="h-6 w-auto" />
+                <span className="text-xl md:text-2xl font-bold">ViBound Studio</span>
               </Link>
               {/* Description */}
               <p className="text-muted-foreground text-base font-normal leading-6">
@@ -113,22 +116,15 @@ export const Footer = () => {
         {/* Bottom Credits */}
         <div className="mt-20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-base font-normal leading-6">
-            Designed by{" "}
-            <a href="https://designrocket.io/" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm">
-              Design Rocket
-            </a>
+            © {new Date().getFullYear()} ViBound Studio. All rights reserved.
           </p>
           <p className="text-muted-foreground text-base font-normal leading-6">
-            Powered by{" "}
-            <a
-              href="https://lovable.dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground underline hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
-            >
-              Lovable
-            </a>
+            Crafting digital experiences that inspire.
           </p>
+        </div>
+
+        <div className="h-60 md:h-[20rem] flex items-center justify-center overflow-hidden">
+          <TextHoverEffect text="VIBOUND" />
         </div>
       </div>
     </footer>

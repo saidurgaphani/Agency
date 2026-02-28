@@ -5,6 +5,7 @@ import { GlowBadge } from "@/components/glow-badge";
 import { BlurInHeading } from "@/components/blur-in-heading";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import servicesHeroImage from "@/assets/services-hero.png";
+import GradientBlinds from "./GradientBlinds";
 
 // Import logos
 import logo1 from "@/assets/logos/logo-1.svg";
@@ -19,26 +20,30 @@ export const ServicesHeroSection = () => {
   const prefersReducedMotion = useReducedMotion();
   return (
     <section className="relative pt-32 pb-24 px-6 md:px-12 lg:px-24 overflow-hidden">
-      {/* Background Video */}
+      {/* Background Gradient Blinds */}
       <div className="absolute top-0 left-0 right-0 h-full z-0 overflow-hidden">
-        {prefersReducedMotion ? (
-          <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-background to-zinc-800" />
-        ) : (
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className="absolute inset-0 w-full h-full object-cover grayscale"
-          >
-            <source src="/videos/hero-bg.mp4" type="video/mp4" />
-          </video>
-        )}
+        <div className="absolute inset-0">
+          <GradientBlinds
+            paused={prefersReducedMotion}
+            gradientColors={["#FF9FFC", "#5227FF"]}
+            angle={0}
+            noise={0.3}
+            blindCount={36}
+            blindMinWidth={70}
+            mouseDampening={0.1}
+            mirrorGradient={false}
+            spotlightRadius={0.5}
+            spotlightSoftness={1}
+            spotlightOpacity={1}
+            distortAmount={0}
+            shineDirection="left"
+          />
+        </div>
+
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-background/60" />
+        <div className="absolute inset-0 bg-black/30 pointer-events-none" />
         {/* Bottom Fade Overlay */}
-        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black to-transparent pointer-events-none" />
       </div>
       <div className="max-w-7xl mx-auto relative z-20">
         {/* Two Column Layout */}
@@ -78,7 +83,7 @@ export const ServicesHeroSection = () => {
         </div>
 
         {/* Trusted By Section */}
-        <div className="mt-24 flex flex-col items-center gap-8">
+        {/* <div className="mt-24 flex flex-col items-center gap-8">
           <p className="text-muted-foreground text-sm tracking-wide">
             Trusted by global powerhouses like
           </p>
@@ -92,7 +97,7 @@ export const ServicesHeroSection = () => {
               />
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

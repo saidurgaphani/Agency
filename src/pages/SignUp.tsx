@@ -28,7 +28,7 @@ const SignUp = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (formData.password !== formData.confirmPassword) {
       toast({
         title: "Passwords don't match",
@@ -48,7 +48,7 @@ const SignUp = () => {
 
     toast({
       title: "Account created!",
-      description: "Welcome to Strat Studio.",
+      description: "Welcome to ViBound Studio.",
     });
 
     navigate("/dashboard");
@@ -58,9 +58,9 @@ const SignUp = () => {
     <div className="min-h-screen bg-background text-foreground relative">
       {/* Header light effect - below navbar */}
       <div className="fixed top-0 left-0 w-full z-10 pointer-events-none overflow-hidden" style={{ transform: 'translateY(-5%)' }}>
-        <img 
-          src={headerLight} 
-          alt="" 
+        <img
+          src={headerLight}
+          alt=""
           className="w-full object-cover opacity-70 mix-blend-lighten"
           style={{ transform: 'scale(1.05)' }}
         />

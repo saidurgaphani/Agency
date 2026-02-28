@@ -1,10 +1,10 @@
-import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { GlowButton } from "@/components/ui/glow-button";
 import { GlowBadge } from "@/components/glow-badge";
 import { BlurInHeading } from "@/components/blur-in-heading";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import heroLightEffect from "@/assets/hero-light-effect.png";
+import GradientBlinds from "./GradientBlinds";
 
 // Import logos
 import logo1 from "@/assets/logos/logo-1.svg";
@@ -20,28 +20,30 @@ export const AboutHeroSection = () => {
 
   return (
     <section className="relative pt-32 pb-24 px-6 md:px-12 lg:px-24 overflow-hidden">
-      {/* Background Video */}
+      {/* Background Gradient Blinds */}
       <div className="absolute top-0 left-0 right-0 h-full z-0 overflow-hidden">
-        {prefersReducedMotion ? (
-          /* Static gradient background for reduced motion */
-          <div className="absolute inset-0 bg-gradient-to-b from-muted/20 to-background" />
-        ) : (
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className="absolute inset-0 w-full h-full object-cover grayscale"
-          >
-            <source src="/videos/hero-bg.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        )}
+        <div className="absolute inset-0">
+          <GradientBlinds
+            paused={prefersReducedMotion}
+            gradientColors={["#FF9FFC", "#5227FF"]}
+            angle={0}
+            noise={0.3}
+            blindCount={36}
+            blindMinWidth={70}
+            mouseDampening={0.1}
+            mirrorGradient={false}
+            spotlightRadius={0.5}
+            spotlightSoftness={1}
+            spotlightOpacity={1}
+            distortAmount={0}
+            shineDirection="left"
+          />
+        </div>
+
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-background/60" />
+        <div className="absolute inset-0 bg-black/30 pointer-events-none" />
         {/* Bottom Fade Overlay */}
-        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black to-transparent pointer-events-none" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-20">
@@ -50,9 +52,9 @@ export const AboutHeroSection = () => {
           {/* Badge with Light Effect */}
           <div className="relative">
             {/* Light effect behind badge */}
-            <img 
-              src={heroLightEffect} 
-              alt="" 
+            <img
+              src={heroLightEffect}
+              alt=""
               className="absolute left-1/2 -translate-x-1/2 -top-32 w-[500px] h-auto opacity-60 mix-blend-lighten pointer-events-none"
             />
             <GlowBadge>Design studio for AI, SaaS & tech startups</GlowBadge>
@@ -70,15 +72,14 @@ export const AboutHeroSection = () => {
 
           {/* CTA Button */}
           <Link to="/schedule">
-            <Button variant="glass" size="lg" className="h-14 px-8 py-4 rounded-2xl text-lg">
-              Schedule a 1:1 Meeting
-              <ArrowRight className="w-6 h-6" />
-            </Button>
+            <GlowButton>
+              Schedule a Meeting
+            </GlowButton>
           </Link>
         </div>
 
         {/* Trusted By Section */}
-        <div className="mt-24 flex flex-col items-center gap-8">
+        {/* <div className="mt-24 flex flex-col items-center gap-8">
           <p className="text-muted-foreground text-sm tracking-wide">
             Trusted by global powerhouses like
           </p>
@@ -92,7 +93,7 @@ export const AboutHeroSection = () => {
               />
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { Twitter, Linkedin, Instagram, Facebook } from "lucide-react";
 
 export function ContactFormSection() {
   const { toast } = useToast();
@@ -27,17 +28,47 @@ export function ContactFormSection() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      // using FormSubmit.co - completely free, no sign-up required (just verify first email)
+      const response = await fetch("https://formsubmit.co/ajax/saidurgaphanisdp@gmail.com", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          ...formData,
+          _subject: `New submission from ${formData.name}`,
+          _template: 'table'
+        })
+      });
 
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
+      if (!response.ok) throw new Error("Failed to send message");
 
-    setFormData({ name: "", email: "", company: "", message: "" });
-    setIsSubmitting(false);
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
+
+      setFormData({ name: "", email: "", company: "", message: "" });
+    } catch (error) {
+      console.error("Submission Error:", error);
+      toast({
+        title: "Error sending message",
+        description: "Please try again later or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
+  const socialLinks = [
+    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+    { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+    { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
+  ];
 
   return (
     <section className="relative z-20 w-full pb-16 md:pb-24 px-6 md:px-12 lg:px-24">
@@ -87,7 +118,7 @@ export function ContactFormSection() {
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="jane@mono.ai"
+                  placeholder="jane@gmail.com"
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -151,28 +182,45 @@ export function ContactFormSection() {
 
           {/* Right Column - Contact Info */}
           <div
-            className="flex flex-col justify-center min-w-0"
+            className="flex flex-col justify-center min-w-0 "
             style={{ backgroundColor: "#121212" }}
           >
             {/* Phone */}
-            <div className="flex flex-col gap-2 p-8 md:p-12 border-b border-border">
+            {/* <div className="flex flex-col gap-2 p-8 md:p-12 border-b border-border">
               <Phone className="w-6 h-6 text-foreground" strokeWidth={1.5} />
               <span className="text-foreground text-base font-medium mt-2">Phone</span>
               <span className="text-muted-foreground text-base">1-800-275-2273</span>
-            </div>
+            </div> */}
 
             {/* Email */}
             <div className="flex flex-col gap-2 p-8 md:p-12 border-b border-border">
               <Mail className="w-6 h-6 text-foreground" strokeWidth={1.5} />
               <span className="text-foreground text-base font-medium mt-2">Email</span>
-              <span className="text-muted-foreground text-base">support@mono.ai</span>
+              <span className="text-muted-foreground text-base">support@vibound.com</span>
             </div>
 
             {/* Office */}
-            <div className="flex flex-col gap-2 p-8 md:p-12">
+            {/* <div className="flex flex-col gap-2 p-8 md:p-12">
               <MapPin className="w-6 h-6 text-foreground" strokeWidth={1.5} />
               <span className="text-foreground text-base font-medium mt-2">Office</span>
               <span className="text-muted-foreground text-base">5678 Dupont Hwy Dover, DE 19901</span>
+            </div> */}
+
+
+            {/* Social Icons */}
+            <div className="flex items-center gap-4 gap-2 p-8 md:p-12">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="p-3.5 rounded-full border border-muted-foreground/30 hover:border-foreground/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background transition-colors"
+                >
+                  <social.icon className="w-5 h-5 text-muted-foreground" />
+                </a>
+              ))}
             </div>
           </div>
         </motion.div>

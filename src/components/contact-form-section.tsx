@@ -196,7 +196,7 @@ export function ContactFormSection() {
             <div className="flex flex-col gap-2 p-8 md:p-12 border-b border-border">
               <Mail className="w-6 h-6 text-foreground" strokeWidth={1.5} />
               <span className="text-foreground text-base font-medium mt-2">Email</span>
-              <span className="text-muted-foreground text-base">support@vibound.com</span>
+              <span className="text-muted-foreground text-base">support@nyxor.com</span>
             </div>
 
             {/* Office */}

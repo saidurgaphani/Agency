@@ -7,26 +7,26 @@ import { BlurInHeading } from "@/components/blur-in-heading";
 const milestones = [
   {
     year: "2019",
-    title: "ViBound Studio launch",
-    description: "In December 2020, Alex Carter, Jamie Lin, and Mia Chen joined forces to establish ViBound Studio with a clear mission: to make cutting-edge design accessible and affordable for all tech innovators. The studio specializes in AI, SaaS, and tech solutions, addressing complex challenges with creative design.",
+    title: "nyxor. launch",
+    description: "In December 2020, Alex Carter, Jamie Lin, and Mia Chen joined forces to establish nyxor. with a clear mission: to make cutting-edge design accessible and affordable for all tech innovators. The studio specializes in AI, SaaS, and tech solutions, addressing complex challenges with creative design.",
     isFirst: true,
   },
   {
     year: "2015",
-    title: "ViBound Studio's debut",
-    description: "Building on the success of ViBound Studio's debut, the studio expanded in 2021, focusing on enhancing user experiences in tech, offering services like UX/UI design, branding, and product development.",
+    title: "nyxor. debut",
+    description: "Building on the success of nyxor. debut, the studio expanded in 2021, focusing on enhancing user experiences in tech, offering services like UX/UI design, branding, and product development.",
     isFirst: false,
   },
   {
     year: "3",
     title: "Global expansion",
-    description: "ViBound Studio broadened its reach to international markets, launching services in Europe and Asia. The studio also opened a new design hub in Berlin, making its innovative solutions available to a wider audience.",
+    description: "nyxor. broadened its reach to international markets, launching services in Europe and Asia. The studio also opened a new design hub in Berlin, making its innovative solutions available to a wider audience.",
     isFirst: false,
   },
   {
     year: "4",
-    title: "ViBound Studio goes public",
-    description: "ViBound Studio went public through a SPAC on NASDAQ: STRT. The studio acquired the design firm PixelCraft and the tech platform InnovateX, significantly enhancing its global presence.",
+    title: "nyxor. goes public",
+    description: "nyxor. went public through a SPAC on NASDAQ: NYXR. The studio acquired the design firm PixelCraft and the tech platform InnovateX, significantly enhancing its global presence.",
     isFirst: false,
   },
 ];

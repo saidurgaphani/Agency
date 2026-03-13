@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/ViBound.svg";
+import logo from "@/assets/ViBound.svg"; // Keeping file ref for now but renamed to nyxor. in UI
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -30,8 +30,8 @@ export function Navbar() {
       <nav className="container mx-auto flex h-16 items-center justify-between px-6 lg:px-24">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="ViBound Studio Logo" className="h-12 w-auto" />
-          {/* <span className="text-xl md:text-2xl font-bold">___ Studio</span> */}
+          {/* <img src={logo} alt="nyxor. Logo" className="h-12 w-auto" /> */}
+          <span className="text-xl md:text-2xl font-brand">nyxor.</span>
         </Link>
 
         {/* Desktop Navigation */}

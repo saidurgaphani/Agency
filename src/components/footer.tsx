@@ -1,6 +1,6 @@
 import { Twitter, Linkedin, Instagram, Facebook } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/triser.svg";
 import headerLight from "@/assets/header-light.png";
 import { GlowBadge } from "./glow-badge";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
@@ -55,7 +55,7 @@ export const Footer = () => {
             <div className="flex flex-col gap-6">
               {/* Logo */}
               <Link to="/" className="flex items-center gap-3">
-                <span className="text-xl md:text-2xl font-brand">nyxor.</span>
+                <span className="text-xl md:text-2xl font-brand">triser.</span>
               </Link>
               {/* Description */}
               <p className="text-muted-foreground text-base font-normal leading-6">
@@ -116,7 +116,7 @@ export const Footer = () => {
         {/* Bottom Credits */}
         <div className="mt-20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-base font-normal leading-6">
-            © {new Date().getFullYear()} nyxor. All rights reserved.
+            © {new Date().getFullYear()} triser. All rights reserved.
           </p>
           <p className="text-muted-foreground text-base font-normal leading-6">
             Crafting digital experiences that inspire.
@@ -124,7 +124,7 @@ export const Footer = () => {
         </div>
 
         <div className="h-60 md:h-[20rem] flex items-center justify-center overflow-hidden">
-          <TextHoverEffect text="nyxor." />
+          <TextHoverEffect text="triser." />
         </div>
       </div>
     </footer>

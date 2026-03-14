@@ -264,10 +264,10 @@ const ProjectCalculatorSection = () => {
                 </p>
               </div>
 
-              {/* nyxor. Cost */}
+              {/* triser. Cost */}
               <div className="rounded-2xl p-6 space-y-3 border border-border relative overflow-hidden bg-gradient-card">
                 <img src={pricingCardBg} alt="" className="absolute top-0 right-0 w-auto h-full object-cover pointer-events-none" />
-                <h4 className="text-foreground text-lg font-normal relative z-10">With <span className="font-brand">nyxor.</span></h4>
+                <h4 className="text-foreground text-lg font-normal relative z-10">With <span className="font-brand">triser.</span></h4>
                 <div className="text-foreground text-5xl font-bold">${calculatePrice().toLocaleString()}</div>
                 <p className="text-muted-foreground">Save your money, time & headache</p>
               </div>

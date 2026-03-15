@@ -6,17 +6,17 @@ import { cn } from "@/lib/utils"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export interface TestimonialProps extends React.HTMLAttributes<HTMLDivElement> {
-    name: string
-    role: string
-    company?: string
+    // name: string
+    // role: string
+    // company?: string
     testimonial: string
     rating?: number
     image?: string
 }
 
 const Testimonial = React.forwardRef<HTMLDivElement, TestimonialProps>(
-    ({ name, role, company, testimonial, rating = 5, image, className, ...props }, ref) => {
-        return (
+    ({ testimonial, rating = 5, image, className, ...props }, ref) => {
+        return (    
             <div
                 ref={ref}
                 className={cn(
@@ -54,17 +54,17 @@ const Testimonial = React.forwardRef<HTMLDivElement, TestimonialProps>(
                         <div className="flex items-center gap-4">
                             {image && (
                                 <Avatar>
-                                    <AvatarImage src={image} alt={name} height={48} width={48} />
-                                    <AvatarFallback>{name[0]}</AvatarFallback>
+                                    {/* <AvatarImage src={image} alt={name} height={48} width={48} /> */}
+                                    {/* <AvatarFallback>{name[0]}</AvatarFallback> */}
                                 </Avatar>
                             )}
 
                             <div className="flex flex-col items-start">
-                                <h3 className="font-semibold text-foreground">{name}</h3>
-                                <p className="text-sm text-muted-foreground">
+                                {/* <h3 className="font-semibold text-foreground">{name}</h3> */}
+                                {/* <p className="text-sm text-muted-foreground">
                                     {role}
                                     {company && ` @ ${company}`}
-                                </p>
+                                </p> */}
                             </div>
                         </div>
                     </div>

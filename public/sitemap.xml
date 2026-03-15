@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://stratstudio.lovable.app/</loc>
+    <loc>https://triser.vercel.app/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <lastmod>2025-12-08</lastmod>
   </url>
   <url>
-    <loc>https://stratstudio.lovable.app/about</loc>
+    <loc>https://triser.vercel.app/about</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <lastmod>2025-12-08</lastmod>
   </url>
   <url>
-    <loc>https://stratstudio.lovable.app/services</loc>
+    <loc>https://triser.vercel.app/services</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <lastmod>2025-12-08</lastmod>
   </url>
   <url>
-    <loc>https://stratstudio.lovable.app/contact</loc>
+    <loc>https://triser.vercel.app/contact</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <lastmod>2025-12-08</lastmod>
   </url>
   <url>
-    <loc>https://stratstudio.lovable.app/privacy-policy</loc>
+    <loc>https://triser.vercel.app/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <lastmod>2025-12-08</lastmod>
   </url>
   <url>
-    <loc>https://stratstudio.lovable.app/login</loc>
+    <loc>https://triser.vercel.app/login</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <lastmod>2025-12-08</lastmod>
   </url>
   <url>
-    <loc>https://stratstudio.lovable.app/signup</loc>
+    <loc>https://triser.vercel.app/signup</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <lastmod>2025-12-08</lastmod>
   </url>
   <url>
-    <loc>https://stratstudio.lovable.app/password-protected</loc>
+    <loc>https://triser.vercel.app/password-protected</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
     <lastmod>2025-12-08</lastmod>

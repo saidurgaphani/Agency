@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/ViBound.svg"; // Keeping file ref for now but renamed to triser. in UI
+import logo from "@/assets/triser.svg";
 
 const navLinks = [
   { label: "Home", href: "/" },

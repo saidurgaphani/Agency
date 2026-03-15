@@ -5,6 +5,9 @@ import { BlurInHeading } from "@/components/blur-in-heading";
 
 // Import project images
 import designRocket from "@/assets/projects/design-rocket.png";
+import csi from "@/assets/projects/csi.png"
+import insightra from "@/assets/projects/insightra.png"
+import trackora from "@/assets/projects/trackora.png"
 // import saasTemplate from "@/assets/projects/saas-template.png";
 // import motionPortfolio from "@/assets/projects/motion-portfolio.png";
 // import rocketDashboard from "@/assets/projects/rocket-dashboard.png";
@@ -22,22 +25,22 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Design Rocket",
-    description: "Full course landing page for AI-powered web design education platform with modern dark aesthetics.",
-    image: designRocket,
+    title: "Club Website",
+    description: "A modern, dynamic website for the Computer Science Club, designed to engage members and showcase club activities.",
+    image: csi,
   },
-  // {
-  //   id: 2,
-  //   title: "SaaS Template",
-  //   description: "Clean workflow automation platform with seamless integrations for enterprise teams.",
-  //   image: saasTemplate,
-  // },
-  // {
-  //   id: 3,
-  //   title: "Motion Portfolio",
-  //   description: "Stunning portfolio template with cosmic-inspired visuals for designers and developers.",
-  //   image: motionPortfolio,
-  // },
+  {
+    id: 2,
+    title: "Insightra",
+    description: "A Generative AI Business Intelligence System designed to bridge the gap between raw data and executive decision-making.",
+    image: insightra,
+  },
+  {
+    id: 3,
+    title: "Trackora",
+    description: "A comprehensive platform for Aptitude, Coding, Interview Preparation, and Skill Courses, designed to empower learners with the tools they need to succeed in their careers.",
+    image: trackora,
+  },
   // {
   //   id: 4,
   //   title: "Rocket Dashboard",

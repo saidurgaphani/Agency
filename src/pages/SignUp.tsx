@@ -48,7 +48,7 @@ const SignUp = () => {
 
     toast({
       title: "Account created!",
-      description: "Welcome to ViBound Studio.",
+      description: "Welcome to triser.",
     });
 
     navigate("/dashboard");

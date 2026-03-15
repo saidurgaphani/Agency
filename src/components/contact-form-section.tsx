@@ -30,7 +30,7 @@ export function ContactFormSection() {
 
     try {
       // using FormSubmit.co - completely free, no sign-up required (just verify first email)
-      const response = await fetch("https://formsubmit.co/ajax/saidurgaphanisdp@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/triserstudio@zohomail.in", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ export function ContactFormSection() {
                   id="name"
                   name="name"
                   type="text"
-                  placeholder="Jane Smith"
+                  placeholder="Enter your name"
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -118,7 +118,7 @@ export function ContactFormSection() {
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="jane@gmail.com"
+                  placeholder="Enter your mail"
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -137,7 +137,7 @@ export function ContactFormSection() {
                   id="company"
                   name="company"
                   type="text"
-                  placeholder="Apple"
+                  placeholder="Company name"
                   value={formData.company}
                   onChange={handleChange}
                   className="bg-transparent border-border focus:border-foreground text-foreground placeholder:text-muted-foreground/50"
@@ -196,7 +196,7 @@ export function ContactFormSection() {
             <div className="flex flex-col gap-2 p-8 md:p-12 border-b border-border">
               <Mail className="w-6 h-6 text-foreground" strokeWidth={1.5} />
               <span className="text-foreground text-base font-medium mt-2">Email</span>
-              <span className="text-muted-foreground text-base">support@triser.com</span>
+              <span className="text-muted-foreground text-base">triserstudio@zohomail.in</span>
             </div>
 
             {/* Office */}

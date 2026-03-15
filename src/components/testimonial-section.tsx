@@ -6,25 +6,25 @@ import { Testimonial } from "@/components/ui/testimonial-card";
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    role: "Product Manager",
-    company: "Amazon",
+    // name: "Sarah Johnson",
+    // role: "Product Manager",
+    // company: "Amazon",
     rating: 5,
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150",
     testimonial: "This experience has completely transformed how we build our UI components. The attention to detail and smooth animations make our application stand out. Highly recommended!"
   },
   {
-    name: "John Doe",
-    role: "Software Engineer",
-    company: "Google",
+    // name: "John Doe",
+    // role: "Software Engineer",
+    // company: "Google",
     rating: 4,
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150",
     testimonial: "The components are well documented and easy to customize. The code quality is top-notch and the support is excellent. I'm very happy with my purchase."
   },
   {
-    name: "Emily Chen",
-    role: "UX Designer",
-    company: "Microsoft",
+    // name: "Emily Chen",
+    // role: "UX Designer",
+    // company: "Microsoft",
     rating: 5,
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150&h=150",
     testimonial: "The accessibility features and design system consistency are impressive. It's saved us countless hours in development time."
@@ -61,7 +61,7 @@ const TestimonialSection = () => {
         <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <motion.div
-              key={testimonial.name}
+              // key={testimonial.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
